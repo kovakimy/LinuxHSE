@@ -1,0 +1,5 @@
+SIGPIPE
+/bin/ls
+/bin/ls
+/bin/ls
+SIGUSR1, exit

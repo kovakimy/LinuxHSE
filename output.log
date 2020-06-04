@@ -1,0 +1,28 @@
+﻿Videos
+Templates
+Public
+Pictures
+output.log
+Music
+log.log
+linux_lab.c
+linux_lab
+examples.desktop
+Downloads
+Documents
+Desktop
+com.txt
+-rw-r--r-- 1 kovakimy kovakimy    44 июн 18 18:02 com.txt
+drwxr-xr-x 2 kovakimy kovakimy  4096 фев  6 09:08 Desktop
+drwxr-xr-x 2 kovakimy kovakimy  4096 фев  6 09:08 Documents
+drwxr-xr-x 2 kovakimy kovakimy  4096 мар 12 09:43 Downloads
+-rw-r--r-- 1 kovakimy kovakimy  8980 фев  6 08:35 examples.desktop
+-rwxr-xr-x 1 kovakimy kovakimy 13280 июн 19 20:25 linux_lab
+-rw-rw-r-- 1 kovakimy kovakimy  3123 июн 19 20:20 linux_lab.c
+-rwx------ 1 kovakimy kovakimy    40 июн 19 20:26 log.log
+drwxr-xr-x 2 kovakimy kovakimy  4096 фев  6 09:08 Music
+-rwx------ 1 kovakimy kovakimy   516 июн 19 20:26 output.log
+drwxr-xr-x 2 kovakimy kovakimy  4096 фев  6 09:08 Pictures
+drwxr-xr-x 2 kovakimy kovakimy  4096 фев  6 09:08 Public
+drwxr-xr-x 2 kovakimy kovakimy  4096 мар  8 17:54 Templates
+drwxr-xr-x 2 kovakimy kovakimy  4096 фев  6 09:08 Videos
