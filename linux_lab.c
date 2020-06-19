@@ -20,21 +20,21 @@ void FLAG_SETTER(int signal);
 
 int ddaemon(char** argv){
     signal(SIGPIPE, FLAG_SETTER);
-	signal(SIGUSR1, FLAG_SETTER);
+    signal(SIGUSR1, FLAG_SETTER);
     
     sem_init(&sem, 0, 1); 
 	
     while(1) {
-		pause();
+	   pause();
 		
-		if(signal_flag==1) {
+	    if(signal_flag==1) {
             sem_wait(&sem);
             int file = open("log.log", O_CREAT|O_RDWR, S_IRWXU);
-			lseek(file, 0, SEEK_END);
-			write(file, "SIGUSR1, exit\n", strlen("SIGUSR1, exit\n"));
-			close(file);
-			sem_post(&sem);
-			sem_destroy(&sem);
+	    lseek(file, 0, SEEK_END);
+	    write(file, "SIGUSR1, exit\n", strlen("SIGUSR1, exit\n"));
+	    close(file);
+	    sem_post(&sem);
+	    sem_destroy(&sem);
             exit(0);
         }
         
@@ -45,9 +45,9 @@ int ddaemon(char** argv){
             close(file_read);
 
             int file = open("log.log", O_CREAT|O_RDWR, S_IRWXU);
-			lseek(file, 0, SEEK_END);
-			write(file, "SIGPIPE\n", strlen("SIGPIPE\n"));
-			close(file);	
+	    lseek(file, 0, SEEK_END);
+	    write(file, "SIGPIPE\n", strlen("SIGPIPE\n"));
+	    close(file);	
             
             int file_write = open("output.log", O_CREAT|O_RDWR, S_IRWXU);
             lseek(file_write, 0, SEEK_END);
@@ -78,15 +78,15 @@ int ddaemon(char** argv){
                 
                 *(arguments + count) = NULL;
                 
-				new_pid = fork();
+		new_pid = fork();
 				
                 if(new_pid == 0 ){
                     sem_wait(&sem);	
                     int fd = open("log.log", O_CREAT|O_RDWR, S_IRWXU);
-					lseek(fd, 0, SEEK_END);
-					write(fd, command[i], strlen(command[i]));
-					write(fd, "\n", strlen("\n"));
-					close(fd);
+		    lseek(fd, 0, SEEK_END);
+		    write(fd, command[i], strlen(command[i]));
+		    write(fd, "\n", strlen("\n"));
+		    close(fd);
                     execv(arguments[0], arguments);
                     sem_post(&sem);
                     sem_destroy(&sem);
